@@ -30,3 +30,23 @@ A browser-based Hit and Blow game where the player competes against the computer
 1. hitは数字および順番が正しい場合
 2. blowは数字は正しいが順番が誤っている場合
 3. 自分の数字を決める際、重複する数字は使えない
+
+## Next.js Implementation
+
+The game start screen is created using Next.js. The start screen includes a title and a start button that navigates to the game page.
+
+## Running the Next.js Application
+
+To run the Next.js application, follow these steps:
+
+1. Install the dependencies:
+   ```
+   npm install
+   ```
+
+2. Run the development server:
+   ```
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
