@@ -50,3 +50,78 @@ To run the Next.js application, follow these steps:
    ```
 
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Running the FastAPI Backend Server
+
+To run the FastAPI backend server, follow these steps:
+
+1. Install FastAPI and Uvicorn:
+   ```
+   pip install fastapi uvicorn
+   ```
+
+2. Run the FastAPI server:
+   ```
+   uvicorn backend.main:app --reload
+   ```
+
+3. The server will be available at [http://localhost:8000](http://localhost:8000).
+
+## JSON Response Format of the `/start-game` API
+
+The `/start-game` API returns the following JSON response:
+
+```json
+{
+  "computer_numbers": [1, 2, 3],
+  "game_id": "unique-game-id",
+  "timestamp": "2023-01-01T00:00:00"
+}
+```
+
+- `computer_numbers`: An array of distinct numbers selected by the computer in a random order.
+- `game_id`: A unique identifier for the game session.
+- `timestamp`: The timestamp when the game was started.
+
+## Configuring Logging Settings
+
+The FastAPI backend server uses Python's built-in `logging` module to log game start requests. To configure the logging settings, follow these steps:
+
+1. Open the `backend/main.py` file.
+2. Locate the logging configuration section:
+   ```python
+   logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+   ```
+3. Modify the logging level, format, or other settings as needed.
+
+## Setting Up the Local Development Environment
+
+To set up the local development environment for running both the Next.js application and the FastAPI backend server, follow these steps:
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/kaoru0310/hit-and-blow.git
+   ```
+
+2. Navigate to the project directory:
+   ```
+   cd hit-and-blow
+   ```
+
+3. Set up the Next.js application:
+   ```
+   cd nextjs-app
+   npm install
+   npm run dev
+   ```
+
+4. Set up the FastAPI backend server:
+   ```
+   cd backend
+   pip install fastapi uvicorn
+   uvicorn main:app --reload
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the Next.js application.
+
+6. The FastAPI backend server will be available at [http://localhost:8000](http://localhost:8000).
