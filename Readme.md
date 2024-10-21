@@ -39,14 +39,14 @@ The game start screen is created using Next.js. The start screen includes a titl
 
 To run the Next.js application, follow these steps:
 
-1. Install the dependencies:
+1. Build the Docker image:
    ```
-   npm install
+   docker-compose build
    ```
 
-2. Run the development server:
+2. Run the Docker containers:
    ```
-   npm run dev
+   docker-compose up
    ```
 
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -55,14 +55,14 @@ To run the Next.js application, follow these steps:
 
 To run the FastAPI backend server, follow these steps:
 
-1. Install FastAPI and Uvicorn:
+1. Build the Docker image:
    ```
-   pip install fastapi uvicorn
+   docker-compose build
    ```
 
-2. Run the FastAPI server:
+2. Run the Docker containers:
    ```
-   uvicorn backend.main:app --reload
+   docker-compose up
    ```
 
 3. The server will be available at [http://localhost:8000](http://localhost:8000).
@@ -108,18 +108,14 @@ To set up the local development environment for running both the Next.js applica
    cd hit-and-blow
    ```
 
-3. Set up the Next.js application:
+3. Build the Docker images:
    ```
-   cd nextjs-app
-   npm install
-   npm run dev
+   docker-compose build
    ```
 
-4. Set up the FastAPI backend server:
+4. Run the Docker containers:
    ```
-   cd backend
-   pip install fastapi uvicorn
-   uvicorn main:app --reload
+   docker-compose up
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the Next.js application.

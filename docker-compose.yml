@@ -9,7 +9,9 @@ services:
       - "8000:8000"
     networks:
       - app-network
-
+    volumes:
+      - ./backend:/usr/src
+    tty: true
   frontend:
     build:
       context: ./frontend
@@ -18,7 +20,10 @@ services:
       - "3000:3000"
     networks:
       - app-network
-
+    tty: true
+    volumes:
+      - ./frontend/my-app:/app
+    command: sh -c "npm run dev"
 networks:
   app-network:
     driver: bridge
