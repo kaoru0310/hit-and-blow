@@ -6,9 +6,11 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(""); // Pa6a1
 
   const startGame = async () => {
     setLoading(true);
+    setErrorMessage(""); // P7b5f
     try {
       const response = await fetch("/start-game", {
         method: "POST",
@@ -18,6 +20,7 @@ export default function Home() {
       setLoading(false);
     } catch (error) {
       console.error("Error starting game:", error);
+      setErrorMessage("Failed to start the game. Please try again."); // P7b5f
       setLoading(false);
     }
   };
@@ -38,6 +41,7 @@ export default function Home() {
       >
         Click the button below to start the game.
       </motion.p>
+      {errorMessage && <p className={styles.error}>{errorMessage}</p>} {/* Pc280 */}
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
